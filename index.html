@@ -10,10 +10,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;700&display=swap');
 
         :root {
-            --primary: #ff4d6d;
-            --secondary: #ff758f;
-            --dark: #2b0910;
-            --bg-gradient: linear-gradient(135deg, #0f0c20 0%, #2b0910 50%, #4a0e17 100%);
+            --primary: #a855f7;      /* موڤ حيوي */
+            --secondary: #c084fc;    /* موڤ فاتح */
+            --dark: #1e102d;         /* موڤ داكن جداً */
+            --bg-gradient: linear-gradient(135deg, #0f0817 0%, #1e102d 50%, #3b154c 100%);
         }
 
         * {
@@ -34,7 +34,40 @@
             padding: 15px;
         }
 
-        /* خلفية القلوب المتساقطة */
+        /* زر التحكم في الموسيقى - مثبت في أعلى اليمين */
+        .music-btn-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .music-toggle-btn {
+            background: rgba(168, 85, 247, 0.25);
+            border: 1px solid rgba(192, 132, 252, 0.6);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            cursor: pointer;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .music-toggle-btn:hover {
+            background: rgba(168, 85, 247, 0.5);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+        }
+
+        /* خلفية القلوب المتساقطة بدرجات الموڤ */
         .hearts-bg {
             position: fixed;
             top: 0;
@@ -47,7 +80,7 @@
 
         .heart-particle {
             position: absolute;
-            color: rgba(255, 77, 109, 0.35);
+            color: rgba(192, 132, 252, 0.4);
             font-size: 20px;
             animation: fall linear infinite;
         }
@@ -64,12 +97,13 @@
             width: 100%;
             max-width: 600px;
             padding: 25px 20px;
-            background: rgba(255, 255, 255, 0.07);
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
             text-align: center;
         }
 
@@ -96,7 +130,7 @@
         p {
             font-size: 1.05rem;
             line-height: 1.8;
-            color: #f1e3e6;
+            color: #f3e8ff;
             margin-bottom: 15px;
         }
 
@@ -107,7 +141,7 @@
             margin: 15px 0;
             border-radius: 50px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             color: #fff;
             text-align: center;
             font-size: 1.1rem;
@@ -116,7 +150,7 @@
         }
 
         input[type="password"]::placeholder {
-            color: #ddd;
+            color: #d8b4fe;
         }
 
         .btn-custom {
@@ -128,7 +162,7 @@
             font-family: 'Cairo', sans-serif;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
             transition: all 0.3s ease;
             margin: 10px 5px;
             width: calc(100% - 10px);
@@ -137,7 +171,7 @@
 
         .btn-custom:hover {
             transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
         }
 
         /* لعبة السؤال والمراوغة */
@@ -188,7 +222,7 @@
             height: 80px;
             object-fit: cover;
             border-radius: 6px;
-            background: #ffd1dc;
+            background: #e9d5ff;
             display: block;
         }
 
@@ -226,14 +260,14 @@
 
         .message-content h3 {
             margin-top: 0;
-            color: #ff758f;
+            color: #c084fc;
             font-size: 1.2rem;
         }
 
         .message-content p {
             font-size: 0.95rem;
             line-height: 1.7;
-            color: #ffe6eb;
+            color: #f3e8ff;
             margin-bottom: 0;
         }
 
@@ -263,10 +297,10 @@
         .typewriter-text {
             font-family: 'Amiri', serif;
             font-size: 1.2rem;
-            color: #ffe6eb;
+            color: #f3e8ff;
             min-height: 80px;
             line-height: 1.9;
-            white-space: pre-line; /* لضمان ظهور السطر الجديد بشكل دقيق */
+            white-space: pre-line;
         }
 
         /* عرض الفيديوهات */
@@ -282,12 +316,22 @@
         video {
             width: 100%;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
 <body>
+
+<!-- زر التحكم في الموسيقى (أعلى اليمين) -->
+<div class="music-btn-container">
+    <button class="music-toggle-btn" id="musicBtn" onclick="toggleMusic()">🎵 تشغيل الموسيقى</button>
+</div>
+
+<!-- ملف الصوت الخاص بك -->
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <div class="hearts-bg" id="heartsContainer"></div>
 
@@ -385,19 +429,41 @@
 
 </div>
 
-<!-- ملف صوتي خلفية -->
-<audio id="bgMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-</audio>
-
 <script>
+    function id(elemId) { return document.getElementById(elemId); }
+
+    const audio = id('bgMusic');
+
+    // وظيفة دقيقة للتحكم الصوتي وتغيير شكل الزرار فوراً
+    function toggleMusic() {
+        const btn = id('musicBtn');
+        if (audio.paused) {
+            audio.volume = 0.6;
+            audio.play().then(() => {
+                btn.innerText = '⏸️ إيقاف الموسيقى';
+            }).catch(e => {
+                console.log("خطأ في تشغيل الصوت:", e);
+                alert("يرجى التأكد من اختيار ملف الصوت باسم music.mp3 وموجود بجانب الكود!");
+            });
+        } else {
+            audio.pause();
+            btn.innerText = '🎵 تشغيل الموسيقى';
+        }
+    }
+
+    // إيقاف الموسيقى إجبارياً عند تشغيل الفيديوهات
+    function stopMusic() {
+        audio.pause();
+        id('musicBtn').innerText = '🎵 تشغيل الموسيقى';
+    }
+
     // 1. تساقط القلوب
     function createHearts() {
         const container = id('heartsContainer');
         for(let i = 0; i < 25; i++) {
             const heart = document.createElement('div');
             heart.classList.add('heart-particle');
-            heart.innerHTML = '❤️';
+            heart.innerHTML = '💜';
             heart.style.left = Math.random() * 100 + 'vw';
             heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
             heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
@@ -406,16 +472,13 @@
     }
     createHearts();
 
-    function id(elemId) { return document.getElementById(elemId); }
-
     // 2. التحقق من كلمة السر
     function checkPass() {
         var pass = id('pass').value;
         if(pass === "كنوزتييي") {
-            const audio = id('bgMusic');
-            audio.volume = 0.3;
-            audio.play().catch(() => console.log("تفاعل المستخدم مطلوب للتشغيل"));
-            
+            if (audio.paused) {
+                toggleMusic();
+            }
             nextStage(1);
         } else {
             alert("كلمة السر خاطئة!");
@@ -427,7 +490,9 @@
         document.querySelectorAll('.stage').forEach(el => el.classList.remove('active'));
         id('stage' + stageNum).classList.add('active');
         
+        // إيقاف الموسيقى عند الوصول لمرحلة الفيديوهات
         if(stageNum === 5) {
+            stopMusic();
             startVideos();
         } else if(stageNum === 6) {
             triggerMassiveConfetti();
@@ -442,23 +507,21 @@
         btn.style.transform = `translate(${x}px, ${y}px)`;
     }
 
-    // 5. العداد الزمني (230 يومًا و17 ساعة و24 دقيقة و29 ثانية)
-    const targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() - 230);
-    targetDate.setHours(targetDate.getHours() - 17);
-    targetDate.setMinutes(targetDate.getMinutes() - 24);
-    targetDate.setSeconds(targetDate.getSeconds() - 29);
+    // 5. العداد الزمني الحقيقي (تاريخ بداية ثابت: 29 يناير 2026)
+    const startDate = new Date(2026, 0, 29, 21, 35, 15);
 
     function updateCounter() {
         const now = new Date();
-        const diff = now - targetDate;
+        const diff = now - startDate;
         
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-        const seconds = Math.floor((diff / 1000) % 60);
-        
-        id('counter').innerHTML = `${days} يومًا و ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية ❤️`;
+        if (diff > 0) {
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            
+            id('counter').innerHTML = `${days} يومًا و ${hours} ساعة و ${minutes} دقيقة و ${seconds} ثانية ❤️`;
+        }
     }
     
     updateCounter();
@@ -517,13 +580,15 @@
                 particleCount: 5,
                 angle: 60,
                 spread: 55,
-                origin: { x: 0 }
+                origin: { x: 0 },
+                colors: ['#a855f7', '#c084fc', '#ffffff']
             });
             confetti({
                 particleCount: 5,
                 angle: 120,
                 spread: 55,
-                origin: { x: 1 }
+                origin: { x: 1 },
+                colors: ['#a855f7', '#c084fc', '#ffffff']
             });
 
             if (Date.now() < end) {
@@ -534,4 +599,5 @@
 </script>
 
 </body>
-</html>
+    </html>
+    
